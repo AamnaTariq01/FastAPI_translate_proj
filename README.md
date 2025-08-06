@@ -1,28 +1,33 @@
-# 🌍 FastAPI Translation API (English ➝ French) using Hugging Face
+# 🌍 Multilingual Translator (FastAPI + Hugging Face + Streamlit)
 
-This project demonstrates how to build a RESTful API using **FastAPI** that translates English text to French using the Hugging Face inference API. It's lightweight, free to use, and designed for learning/practice purposes.
+A full-stack translation app that uses **FastAPI** as the backend and **Streamlit** for a simple web interface. It translates text between languages using Hugging Face’s public models — all for free, without training any models.
 
 ---
 
 ## 🚀 Features
 
-- 🔁 Translate English ➝ French using Hugging Face's model
-- ⚡ Fast and modern backend with FastAPI
-- ☁️ No GPU or paid hosting required — just a free Hugging Face token
-- ✅ Live Swagger documentation (`/docs`)
-- 🔐 API key managed via `.env` (not exposed)
+- 🔁 Translate between multiple languages (en, fr, de, es, ar, hi)
+- ⚡ FastAPI backend with REST API
+- 💻 Streamlit frontend with dropdowns and clean UI
+- 🔐 Hugging Face API token secured via `.env`
+- ▶️ One-click script to launch backend & frontend together
 
 ---
 
 ## 📁 Project Structure
 
 project/
-├── main.py # FastAPI app entry point
-├── api.py # Hugging Face API integration logic
-├── run.py # (Optional) Runs server and opens docs automatically
-├── requirements.txt # Python dependencies
-├── .env # Environment variables (e.g., Hugging Face API key)
-└── .gitignore # Files and folders to ignore in version control
+├── main.py # FastAPI backend
+├── api.py # Translation logic (Hugging Face API)
+├── streamlit_app.py # Streamlit frontend
+├── run_all.py # Launches backend + frontend together
+├── requirements.txt # Dependencies
+├── .env # Hugging Face token (not tracked)
+└── .gitignore # Ignores venv, .env, etc.
+
+yaml
+Copy
+Edit
 
 ---
 
@@ -30,39 +35,36 @@ project/
 
 ```bash
 # Clone this repository
-git clone https://github.com/your-username/fastapi-translate-api.git
-cd fastapi-translate-api
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 
-# (Optional but recommended) Create virtual environment
+# (Optional) Set up a virtual environment
 python -m venv venv
-venv\Scripts\activate        # On Windows
-# source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate   # Windows
+# source venv/bin/activate  # macOS/Linux
 
-# Install required packages
+# Install dependencies
 pip install -r requirements.txt
+🔐 Setup Hugging Face API Key
+Sign up: https://huggingface.co/join
 
-🔐 API Token Setup
-Create a free Hugging Face account: https://huggingface.co/join
+Generate a token: https://huggingface.co/settings/tokens
 
-Generate a read access token: https://huggingface.co/settings/tokens
+Create a .env file:
 
-Create a .env file in your project directory:
-
-ini
+env
 Copy
 Edit
 HF_API_TOKEN=your_token_here
-▶️ Run the Application
+▶️ How to Run the App (Auto Script)
 bash
 Copy
 Edit
-uvicorn main:app --reload  
-Then visit:
+python run_all.py
+✅ This will:
 
-arduino
-Copy
-Edit
-http://127.0.0.1:8000/docs
-Use the Swagger UI to test your translation API interactively.
+Start the FastAPI server on http://127.0.0.1:8000
 
+Launch Streamlit on http://localhost:8501
 
+Open it automatically in your browser
