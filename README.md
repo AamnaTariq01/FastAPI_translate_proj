@@ -68,3 +68,24 @@ Start the FastAPI server on http://127.0.0.1:8000
 Launch Streamlit on http://localhost:8501
 
 Open it automatically in your browser
+
+🛡️ License
+MIT — free to use, modify, and distribute.
+
+Made with ❤️ using FastAPI, Hugging Face, and Streamlit.
+
+yaml
+Copy
+Edit
+
+---
+
+## 🟢 What to Do Now
+
+1. Copy the above content into your local `README.md`
+2. Then commit & push:
+
+```bash
+git add README.md
+git commit -m "Update README with Streamlit and auto-run info"
+git push origin main
